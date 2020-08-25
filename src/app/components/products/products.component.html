@@ -1,55 +1,57 @@
-<div class="row ">
-    <div class="col-md-8 mx-auto">
-        <div class="card">
-            <div class="card-header">
-                Nuevo Producto
+<div class="row">
+  <div class="col-md-8 mx-auto">
+    <div class="card">
+      <div class="card-header">
+        Nuevo Producto
+      </div>
+    </div>
+    <div class="card-body">
+      <form (submit)="guardar(this.product)">
+        <div class="row">
+          <div class="col mx-auto ">
+            <div class="form-group">
+              <label for="">Nombre Producto</label>
+              <input [(ngModel)] = "product.nombre" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre producto">
+            </div> 
+            <div class="form-group">
+              <label for="Caracteristicas">Caracteristicas</label>
+              <input [(ngModel)] = "product.caracteristica"  type="text" class="form-control" id="caracteristicas" name="caracteristica">
             </div>
-        </div>
-        <div class="card-body"  >
-            <form>
-               <div class="row">
-                   <div class="col mx-auto ">
-                        <div class="form-group"  >
-                            <label for="">Nombre Producto</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="nombre producto">
-                        </div>
-                        <div class="form-group">
-                            <label for="Caracteristicas">Caracteristicas</label>
-                            <input type="password" class="form-control" id="Caracteristicas">
-                          </div>
-                          <div class="form-group">
-                            <label for="fecha">Fecha lanzamiento</label>
-                            <input type="date"  class="form-control" id="fecha" name="fecha" >
-                          </div>
-        
-                          <div class="form-group">
-                              <label for="fecha">Correo fabricante</label>
-                              <input type="email"  class="form-control" id="email" name="email" >
-                            </div>
-                   </div>
-                   <div class="col mx-auto">
-                    <div class="form-group">
-                        <label for="fecha">Precio</label>
-                          <input data-number-to-fixed="2" data-number-stepfactor="100" type="number" min="0" step="100"    class="form-control currency" id="precio" name="precio" >
-                      </div>
-                      <div class="form-group">
-                        <label for="fecha">Unidades disponibles</label>
-                          <input type="number" min="0" step="100"    class="form-control currency" id="precio" name="precio" >
-                      </div>
-                      <div class="form-group">
-                        <label for="fecha">Unidades vendidas</label>
-                          <input type="number" min="0" step="100"    class="form-control currency" id="precio" name="precio" >
-                      </div>
-                      <div class="form-group">
-                        <label for="img">Imagen</label>
-                          <input ng2FileSelect type="file" id="img" name="img" >
-                      </div>
-                   </div>
-               </div>
-               
-               <button type="button"  class="btn btn-primary btn-block">Guardar</button>
-               <button type="button"  class="btn btn-secondary mt-3">Cancelar</button>
-            </form>
+            <div class="form-group">
+              <label for="fecha">email</label>
+              <input [(ngModel)] = "product.email" type="email" class="form-control" id="fecha" name="fecha">
+            </div>
 
+            <div class="form-group">
+              <label for="fecha">Pais</label>
+              <input [(ngModel)] = "product.pais" type="text" class="form-control" id="pais" name="pais">
+            </div>
+          </div>
+          <div class="col mx-auto">
+            <div class="form-group">
+              <label for="fecha">Precio</label>
+              <input [(ngModel)] = "product.precio" data-number-to-fixed="2" data-number-stepfactor="100" type="number" min="0" step="100"
+                class="form-control currency" id="precio" name="precio">
+            </div>
+            <div class="form-group">
+              <label for="fecha">Unidades disponibles</label>
+              <input type="number" [(ngModel)] = "product.disponibles" min="0" step="100" class="form-control currency" id="disponibles" name="disponibles">
+            </div>
+
+            <div class="form-group">
+              <label for="fecha">Unidades vendidas</label>
+              <input [(ngModel)] = "product.vendidas" type="number" min="0" step="100" class="form-control currency" id="vendidas" name="vendidas">
+            </div>
+            <div class="form-group">
+              <label for="img">Imagen</label>
+              <input ng2FileSelect type="file" id="img" name="img">
+            </div>
+          </div>
         </div>
-</div>
+
+        <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+        <button type="button" class="btn btn-secondary mt-3">Cancelar</button>
+      </form>
+
+    </div>
+  </div>

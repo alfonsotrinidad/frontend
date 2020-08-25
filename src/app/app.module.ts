@@ -12,14 +12,16 @@ import { SignupComponent } from './components/signup/signup.component';
 //servicios
 
 import { AuthService} from './services/auth.service'
-import { ProductsService} from './services/products.service'
+import { ProductsService} from './services/products.service';
+import { ProductListComponent } from './components/product-list/product-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductsComponent,
-    SignupComponent
+    SignupComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
