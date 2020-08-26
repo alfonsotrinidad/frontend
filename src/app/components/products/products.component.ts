@@ -13,8 +13,9 @@ export class ProductsComponent implements OnInit {
     nombre: "",
     caracteristica:"",
     email:"",
-    pais:"",
     precio:0,
+    pais:"",
+    
     disponibles:0,
     vendidas:0
 
@@ -33,7 +34,15 @@ getProducts(prducto){
   console.log(this.product);
 }
 guardar(producto){
-  this.productService.guardar(this.product);
-}
+ // console.log(this.product);
+  this.productService.guardar(this.product)
+  .subscribe(res =>{
+    console.log(res)
+  },
+  err => console.log("Errpoorr" , err)
+  
+  )
 
+
+}
 }

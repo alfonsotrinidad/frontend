@@ -14,13 +14,13 @@ export class ProductsService {
   getProducts(){
     return   this.http.get<Employee>(this.URL + "/products");
     // return 'hola';
-  return    this.p;
+  //return    this.p;
     //return  this.p ;
       
   
   }
   guardar(producto){
- 
-    this.http.post(this.URL + "/products/guardar",producto);
+    console.log(producto);
+    return this.http.post<any>(this.URL + "/products/guardar",producto);
   }
 }
