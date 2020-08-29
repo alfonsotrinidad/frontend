@@ -8,7 +8,7 @@ import { from } from 'rxjs';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  
+ contacts;
   product={
     nombre: "",
     caracteristica:"",
@@ -25,7 +25,13 @@ export class ProductsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  console.log(this.productService.getProducts());
+ // console.log(this.productService.getProducts());
+ console.log(this.productService.getPaises().subscribe(
+  contacts =>{ 
+    this.contacts = contacts ;
+   console.log(this.contacts);
+  }
+ )) ;
   }
 
 getProducts(prducto){

@@ -15,7 +15,7 @@
             </div> 
             <div class="form-group">
               <label for="Caracteristicas">Caracteristicas</label>
-              <input [(ngModel)] = "product.caracteristica"  type="text" class="form-control" id="caracteristicas" name="caracteristica">
+              <input [(ngModel)] = "product.caracteristica"  type="text" class="form-control" id="caracteristica" name="caracteristica">
             </div>
             <div class="form-group">
               <label for="fecha">email</label>
@@ -24,7 +24,12 @@
 
             <div class="form-group">
               <label for="fecha">Pais</label>
-              <input [(ngModel)] = "product.pais" type="text" class="form-control" id="pais" name="pais">
+              <select class="form-control" id="pais" name="pais" [(ngModel)] = "product.pais" class="custom-select" >
+                <option  *ngFor="let empl of this.contacts " >
+                  {{empl.name}} 
+                </option>
+               </select>
+      
             </div>
           </div>
           <div class="col mx-auto">
@@ -54,4 +59,5 @@
       </form>
 
     </div>
+    
   </div>

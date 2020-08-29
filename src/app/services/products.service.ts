@@ -9,6 +9,7 @@ import { Employee } from 'src/models/employee';
 export class ProductsService {
   p :  Employee;
   private URL = "http://localhost:3000";
+  private contacts;
   constructor( private http: HttpClient) { }
 
   getProducts(){
@@ -22,5 +23,13 @@ export class ProductsService {
   guardar(producto){
     console.log(producto);
     return this.http.post<any>(this.URL + "/products/guardar",producto);
+  }
+
+  getPaises()
+  {
+
+    
+   return  this.http.get("https://restcountries.eu/rest/v2/all" );
+     
   }
 }
