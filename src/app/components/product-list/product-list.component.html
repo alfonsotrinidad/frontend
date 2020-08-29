@@ -1,14 +1,34 @@
-<div class="col">
+<div class="row">
 
-    <div class="col-md-8 mx-auto">
+    <div class="col-md-10 mx-auto">
         <div class="card">
             <div class="card-header">
                 Lista Productos
             </div>
-            <div class="card-body" *ngFor= "let empl of this.p " >
-                    {{empl.email}}- {{empl.password}}
-            </div>
-        
+       
+                <table class="table-striped  mx-4">
+                    <thead>
+                        <tr>
+                            <th >Nombre</th>
+                            <th >Caracteristica</th>
+                            <th >Precio</th>
+                            <th >Disponibles</th>
+                            <th >Vendidas</th>
+                            <th >Pais</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let empl of this.p ">
+                            <td > {{empl.nombre}}</td>
+                            <td > {{empl.caracteristica}}</td>
+                            <td > {{empl.precio}}</td>
+                            <td > {{empl.disponible}}</td>
+                            <td > {{empl.vendidas}}</td>
+                            <td > {{empl.pais}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+    
         </div>
 
-</div>
+    </div>

@@ -20,14 +20,14 @@ export class ProductListComponent implements OnInit {
    
   }
   getEmployees(){
- /* this.ps.getProducts().subscribe(res =>{
+  this.ps.getProducts().subscribe(res =>{
     this.p = res;
       console.log(this.p);
       return this.p;
    }
-   ++
+  )
    
-  //return  this.ps.getProducts(); 
-  }*/
+  return  this.ps.getProducts(); 
+  
 
 }}

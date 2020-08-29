@@ -15,4 +15,7 @@ export class AuthService {
   signUp(user){
    return  this.http.post<any>(this.URL + "/signup", user );
   }
+  users(){
+    return  this.http.get(this.URL + "/users" );
+   }
 }

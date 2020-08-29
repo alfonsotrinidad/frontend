@@ -11,7 +11,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 
 
 const routes: Routes = [
-  {    path: '' , component: ProductListComponent, pathMatch: "full" },
+  {    path: '' , component: HomeComponent, pathMatch: "full" },
   {    path: 'products' , component: ProductsComponent },
   {    path: 'signup' , component: SignupComponent },
   {    path: 'product-list' , component: ProductListComponent  }
