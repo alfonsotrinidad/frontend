@@ -10,6 +10,7 @@ import { Employee } from 'src/models/employee';
 })
 export class ProductListComponent implements OnInit {
    p :  Employee;
+   filtrado = [];
 
   constructor(
     private ps : ProductsService

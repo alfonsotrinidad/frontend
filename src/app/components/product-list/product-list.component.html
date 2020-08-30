@@ -5,7 +5,13 @@
             <div class="card-header">
                 Lista Productos
             </div>
-       
+       <div class="container">
+           <div class="row">
+               <div class="form-group mx-auto col-md-8 mt-2">
+                   <input type="text" class="form-control" id="filtrado" name="filtrado" placeholder="Search..." [(ngModel)]= "filtrado" >
+               </div>
+           </div>
+       </div>
                 <table class="table-striped  mx-4">
                     <thead>
                         <tr>
@@ -15,16 +21,18 @@
                             <th >Disponibles</th>
                             <th >Vendidas</th>
                             <th >Pais</th>
+                            <th >Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let empl of this.p ">
+                        <tr *ngFor="let empl of this.p | filter:filtrado" >
                             <td > {{empl.nombre}}</td>
-                            <td > {{empl.caracteristica}}</td>
+                            <td > {{empl._id}}</td>
                             <td > {{empl.precio}}</td>
                             <td > {{empl.disponibles}}</td>
                             <td > {{empl.vendidas}}</td>
                             <td > {{empl.pais}}</td>
+                            <td > <a class="btn btn-primary" href="#" >Editarr</a> <a class="btn btn-danger" href="#" >Elilimar</a></td>
                         </tr>
                     </tbody>
                 </table>

@@ -13,7 +13,8 @@ import { SignupComponent } from './components/signup/signup.component';
 
 import { AuthService} from './services/auth.service'
 import { ProductsService} from './services/products.service';
-import { ProductListComponent } from './components/product-list/product-list.component'
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { FilterPipe } from './pipes/filter.pipe'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
     HomeComponent,
     ProductsComponent,
     SignupComponent,
-    ProductListComponent
+    ProductListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
