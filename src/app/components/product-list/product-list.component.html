@@ -1,21 +1,34 @@
 <div class="row">
 
-    <div class="col-md-8 mx-auto">
-        <div class="card">
+    <div class="col-md-10 mx-auto">
+        <div class="card" >
             <div class="card-header">
                 Lista Productos
             </div>
-       <div class="container">
+       <div class="container" >
            <div class="row">
-               <div class="form-group mx-auto col-md-8 mt-2">
-                   <input type="text" class="form-control" id="filtrado" name="filtrado" placeholder="Search..." [(ngModel)]= "filtrado" >
+               <div class="form-group mx-auto mt-2">
+                   <input matInput type="text" class="form-control" id="filtrado" name="filtrado" placeholder="Search..." [(ngModel)]= "filtrado" >
                </div>
            </div>
        </div>
-                <table class="table-striped  mx-4">
+       <div style="width: 99%;">
+        <button routerLink=""  mat-mini-fab class="btn-icon " title="Inicio">
+            <mat-icon >home</mat-icon>
+        </button>
+        <button routerLink="/products"  mat-mini-fab  class="btn-icon " title="Nuevo">
+            <mat-icon  >plus_one</mat-icon>
+        </button>
+        <button routerLink="/products"  mat-mini-fab  class="btn-icon " title="Nuevo">
+            <mat-icon  >plus_one</mat-icon>
+        </button>
+       <hr>
+       </div>
+       <div style="overflow: auto;">
+                <table class="table table-striped mx-2" style="width: 99%;">
                     <thead>
                         <tr>
-                            <th >Nombre</th>
+                           <th >Nombre</th>
                             <th >Caracteristica</th>
                             <th >Precio</th>
                             <th >Disponibles</th>
@@ -24,19 +37,32 @@
                             <th >Actions</th>
                         </tr>
                     </thead>
+                   
                     <tbody>
-                        <tr *ngFor="let empl of this.p | filter:filtrado" >
+                        <tr *ngFor="let empl of this.p" >
                             <td > {{empl.nombre}}</td>
                             <td > {{empl._id}}</td>
                             <td > {{empl.precio}}</td>
                             <td > {{empl.disponibles}}</td>
                             <td > {{empl.vendidas}}</td>
                             <td > {{empl.pais}}</td>
-                            <td > <a class="btn btn-primary" href="#" >Editarr</a> <a class="btn btn-danger" href="#" >Elilimar</a></td>
+                            <td style="padding-left: 5px;" > 
+                                <button mat-icon-button class="btn-icon " >
+                                    <mat-icon color="accent" title="Editar"
+                                    style="border:solid 1px #ECF0F1"
+                                    >edit</mat-icon>
+                                 </button>
+                                 <button mat-icon-button  class="btn-icon mx-auto" title="Eliminar" >
+                                    <mat-icon color="warn"
+                                    style="border:solid 1px #ECF0F1"
+                                     >delete</mat-icon>
+                                 </button>
+                            </td>
                         </tr>
                     </tbody>
+           
                 </table>
-    
+            </div>
         </div>
-
+    
     </div>

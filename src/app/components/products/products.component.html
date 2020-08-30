@@ -10,46 +10,66 @@
         <div class="row">
           <div class="col mx-auto ">
             <div class="form-group">
-              <label for="">Nombre Producto</label>
-              <input [(ngModel)] = "product.nombre" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre producto">
-            </div> 
-            <div class="form-group">
-              <label for="Caracteristicas">Caracteristicas</label>
-              <input [(ngModel)] = "product.caracteristica"  type="text" class="form-control" id="caracteristica" name="caracteristica">
+              <mat-form-field class="">
+                <mat-label>Nombre</mat-label>
+                <input matInput [(ngModel)]="product.nombre"  class="form-control" id="nombre" name="nombre"
+                  placeholder="nombre producto">
+              </mat-form-field>
             </div>
             <div class="form-group">
-              <label for="fecha">email</label>
-              <input [(ngModel)] = "product.email" type="email" class="form-control" id="fecha" name="fecha">
+              <mat-form-field class="">
+                <mat-label>Caracteristicas</mat-label>
+                <input matInput [(ngModel)]="product.caracteristica" type="text" class="form-control"
+                  id="caracteristica" name="caracteristica">
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-form-field class="">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="product.email" type="email" class="form-control" id="fecha" name="fecha">
+              </mat-form-field>
             </div>
 
             <div class="form-group">
-              <label for="fecha">Pais</label>
-              <select class="form-control" id="pais" name="pais" [(ngModel)] = "product.pais" class="custom-select" >
-                <option  *ngFor="let empl of this.contacts " >
-                  {{empl.name}} 
-                </option>
-               </select>
-      
+            
+                <mat-label>Pais</mat-label>
+                <mat-select class="form-control" id="pais" name="pais" [(ngModel)]="product.pais">
+                  <mat-option *ngFor="let pais of this.contacts"   >
+                    {{pais.name}}
+                  </mat-option>
+                </mat-select>
+         
             </div>
           </div>
           <div class="col mx-auto">
             <div class="form-group">
-              <label for="fecha">Precio</label>
-              <input [(ngModel)] = "product.precio" data-number-to-fixed="2" data-number-stepfactor="100" type="number" min="0" step="100"
-                class="form-control currency" id="precio" name="precio">
+              <mat-form-field class="">
+                <mat-label>Precio</mat-label>
+                <input matInput [(ngModel)]="product.precio" data-number-to-fixed="2" data-number-stepfactor="100"
+                  type="number" min="0" step="100" class="form-control currency" id="precio" name="precio">
+              </mat-form-field>
             </div>
             <div class="form-group">
-              <label for="fecha">Unidades disponibles</label>
-              <input type="number" [(ngModel)] = "product.disponibles" min="0" step="100" class="form-control currency" id="disponibles" name="disponibles">
+              <mat-form-field class="">
+                <mat-label>U. Disponible</mat-label>
+                <input matInput type="number" [(ngModel)]="product.disponibles" min="0" step="100"
+                  class="form-control currency" id="disponibles" name="disponibles">
+              </mat-form-field>
             </div>
 
             <div class="form-group">
-              <label for="fecha">Unidades vendidas</label>
-              <input [(ngModel)] = "product.vendidas" type="number" min="0" step="100" class="form-control currency" id="vendidas" name="vendidas">
+              <mat-form-field class="">
+                <mat-label>U. Vendidas</mat-label>
+                <input matInput [(ngModel)]="product.vendidas" type="number" min="0" step="100"
+                  class="form-control currency" id="vendidas" name="vendidas">
+              </mat-form-field>
             </div>
+
             <div class="form-group">
-              <label for="img">Imagen</label>
-              <input ng2FileSelect type="file" id="img" name="img">
+           
+             
+                <input ng2FileSelect type="file" id="img" name="img">
+         
             </div>
           </div>
         </div>
@@ -59,5 +79,5 @@
       </form>
 
     </div>
-    
+
   </div>

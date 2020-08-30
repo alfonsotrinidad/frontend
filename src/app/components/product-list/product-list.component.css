@@ -1,0 +1,17 @@
+.btn-icon{
+ margin-right: 3px;
+}
+.table{
+    max-height: 50%;
+}
+.table th, td{
+    text-align: center;
+    font-size: 14px;
+}
+
+.card{ max-height: 35%;}
+.mat-mini-fab{
+    color:"accent";
+    margin : 5px;
+    background-color: #234F5A;
+}
