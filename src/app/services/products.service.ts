@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient} from '@angular/common/http';
 import { Employee } from 'src/models/employee';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,19 +11,32 @@ export class ProductsService {
   p :  Employee;
   private URL = "http://localhost:3000";
   private contacts;
-  constructor( private http: HttpClient) { }
+  constructor( private http: HttpClient, private r:Router) { }
 
   getProducts(){
     return   this.http.get<Employee>(this.URL + "/products");
-    // return 'hola';
-  //return    this.p;
-    //return  this.p ;
+   
       
   
   }
   guardar(producto){
-    console.log(producto);
-    return this.http.post<any>(this.URL + "/products/guardar",producto);
+     return this.http.post<any>(this.URL + "/products/guardar" ,producto);
+
+  }
+
+
+  eliminar(id ){
+    
+   
+  
+   
+   return  this.http.delete(this.URL + "/products/delete/"+id,id).subscribe(()=>{
+  
+    
+     
+    
+    })  ;
+
   }
 
   getPaises()

@@ -9,7 +9,7 @@
     font-size: 14px;
 }
 
-.card{ max-height: 35%;}
+.card{ max-height: 70%;min-height: 300px;  }
 .mat-mini-fab{
     color:"accent";
     margin : 5px;

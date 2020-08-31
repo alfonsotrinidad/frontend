@@ -24,7 +24,8 @@
         </button>
        <hr>
        </div>
-       <div style="overflow: auto;">
+       <div style="overflow: auto; ">
+        
                 <table class="table table-striped mx-2" style="width: 99%;">
                     <thead>
                         <tr>
@@ -52,10 +53,10 @@
                                     style="border:solid 1px #ECF0F1"
                                     >edit</mat-icon>
                                  </button>
-                                 <button mat-icon-button  class="btn-icon mx-auto" title="Eliminar" >
-                                    <mat-icon color="warn"
-                                    style="border:solid 1px #ECF0F1"
-                                     >delete</mat-icon>
+                                 <button  
+                                  mat-icon-button  class="btn-icon mx-auto" title="Eliminar" >
+                                    <mat-icon color="warn" (click)="borrar($event)" id= {{empl._id}}
+                                                             >delete</mat-icon>
                                  </button>
                             </td>
                         </tr>

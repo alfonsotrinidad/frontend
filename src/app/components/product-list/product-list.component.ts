@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { ProductsService} from './../../services/products.service'
 import { Employee } from 'src/models/employee';
-
+import { identifierModuleUrl } from '@angular/compiler';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -11,9 +12,13 @@ import { Employee } from 'src/models/employee';
 export class ProductListComponent implements OnInit {
    p :  Employee;
    filtrado = [];
+   user={
+     id:""
+   };
 
   constructor(
-    private ps : ProductsService
+    private ps : ProductsService,
+    private r : Router
   ) { }
 
   ngOnInit(): void {
@@ -29,6 +34,15 @@ export class ProductListComponent implements OnInit {
   )
    
   return  this.ps.getProducts(); 
-  
 
-}}
+
+}
+borrar(event){
+  const id = event.target.id
+  if(confirm("Clicka en Aceptar o Cancelar:  " + id))
+     this.ps.eliminar(id);
+  
+     location.reload()
+}  
+
+}
