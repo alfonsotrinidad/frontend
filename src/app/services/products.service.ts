@@ -26,19 +26,14 @@ export class ProductsService {
 
 
   eliminar(id ){
-    
-   
-  
-   
-   return  this.http.delete(this.URL + "/products/delete/"+id,id).subscribe(()=>{
-  
-    
-     
-    
-    })  ;
+    return  this.http.delete(this.URL + "/products/delete/"+id,id).subscribe(()=>{
+   })  ;
 
   }
 
+  actualizar(id){
+    alert("Actualizar..."+id);
+  }
   getPaises()
   {
 

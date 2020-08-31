@@ -4,6 +4,9 @@ import { ProductsService} from './../../services/products.service'
 import { Employee } from 'src/models/employee';
 import { identifierModuleUrl } from '@angular/compiler';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { Template } from '@angular/compiler/src/render3/r3_ast';
+import { EditproductComponent} from '../editproduct/editproduct.component';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -15,10 +18,14 @@ export class ProductListComponent implements OnInit {
    user={
      id:""
    };
-
+template={
+  id:""
+}
   constructor(
     private ps : ProductsService,
-    private r : Router
+    private r : Router,
+    private t: EditproductComponent,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -39,10 +46,20 @@ export class ProductListComponent implements OnInit {
 }
 borrar(event){
   const id = event.target.id
+ 
   if(confirm("Clicka en Aceptar o Cancelar:  " + id))
      this.ps.eliminar(id);
   
      location.reload()
+}  
+
+editar(event){
+  const id = event.target.id;
+    
+  
+  //   this.ps.actualizar (id);
+  
+    // location.reload()
 }  
 
 }

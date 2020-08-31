@@ -21,6 +21,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {MatDialogModule} from '@angular/material/dialog';
+import { EditproductComponent } from './components/editproduct/editproduct.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     SignupComponent,
     ProductListComponent,
     FilterPipe,
+    EditproductComponent,
     
   ],
   imports: [
@@ -41,7 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [
     AuthService,
