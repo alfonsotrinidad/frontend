@@ -22,7 +22,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatDialogModule} from '@angular/material/dialog';
-import { EditproductComponent } from './components/editproduct/editproduct.component';
+
 
 @NgModule({
   declarations: [
@@ -31,8 +31,8 @@ import { EditproductComponent } from './components/editproduct/editproduct.compo
     ProductsComponent,
     SignupComponent,
     ProductListComponent,
-    FilterPipe,
-    EditproductComponent,
+    FilterPipe
+   
     
   ],
   imports: [

@@ -5,8 +5,8 @@ import { Employee } from 'src/models/employee';
 import { identifierModuleUrl } from '@angular/compiler';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { Template } from '@angular/compiler/src/render3/r3_ast';
-import { EditproductComponent} from '../editproduct/editproduct.component';
+
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -14,7 +14,7 @@ import { EditproductComponent} from '../editproduct/editproduct.component';
 })
 export class ProductListComponent implements OnInit {
    p :  Employee;
-   filtrado = [];
+   
    user={
      id:""
    };
@@ -24,7 +24,7 @@ template={
   constructor(
     private ps : ProductsService,
     private r : Router,
-    private t: EditproductComponent,
+   
     public dialog: MatDialog
   ) { }
 
