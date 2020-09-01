@@ -18,4 +18,11 @@ export class AuthService {
   users(){
     return  this.http.get(this.URL + "/users" );
    }
+
+   signin(user){
+    console.log(user);
+    return  this.http.get<any>(this.URL + "/signin", user );
+   }
+
+
 }

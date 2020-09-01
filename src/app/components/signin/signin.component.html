@@ -1,0 +1,30 @@
+<div class="row ">
+    <div class="col-md-4 mx-auto">
+        <mat-card>
+            <div class="card-header">
+                Iniciar Session
+            </div>
+   
+        <div class="card-body">
+            <form (submit)="signin()" >
+                <mat-form-field class="mat-form">
+                    <mat-label>Usuario</mat-label>
+                    <input class="mat-input"  [(ngModel)] = "user.user" matInput  type="text" name="user" id="user"  required autofocus
+                      placeholder="nombre producto">
+                  </mat-form-field>
+                  <mat-form-field class="mat-form">
+                    <mat-label>Contraseña</mat-label>
+                    <input mat-input [(ngModel)] = "user.password" matInput type="text"  name="password" id="password" name="password" required
+                      placeholder="contraseña">
+                  </mat-form-field>
+               <button mat-raised-button class="btn-icon ml-1" color="primary">
+                Entrar
+               </button>
+               <button mat-raised-button class="btn-icon ml-1" color="warn">
+                Cancelar
+               </button>
+            </form>
+
+        </div>
+    </mat-card>
+</div>

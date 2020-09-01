@@ -22,6 +22,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatDialogModule} from '@angular/material/dialog';
+import { SigninComponent } from './components/signin/signin.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     ProductsComponent,
     SignupComponent,
     ProductListComponent,
-    FilterPipe
+    FilterPipe,
+    SigninComponent
    
     
   ],
@@ -45,7 +48,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     MatInputModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [
     AuthService,
