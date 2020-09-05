@@ -18,7 +18,7 @@ export class SigninComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //console.log(this.user);
+ this.signin()
   }
 
   signin(){ 
@@ -28,8 +28,9 @@ export class SigninComponent implements OnInit {
        (res) =>{ 
          this.contact = res;
          console.log("Esto susbcribe   " + res );
+         console.log(this.contact);
            // this.router.navigate (['/products']);
       },
-      err => console.log(err)
+  
      );}
 }
