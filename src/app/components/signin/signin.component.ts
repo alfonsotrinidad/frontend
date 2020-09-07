@@ -23,14 +23,15 @@ export class SigninComponent implements OnInit {
 
   signin(){ 
  
-  return   this.authService.signin(this.user)
-     .subscribe(
-       (res) =>{ 
+    this.authService.signin(this.user)
+    .subscribe( res =>{ 
          this.contact = res;
-         console.log("Esto susbcribe   " + res );
-         console.log(this.contact);
-           // this.router.navigate (['/products']);
-      },
-  
-     );}
+           localStorage.setItem("token", res.token)
+           this.router.navigate (['/products']);
+         },
+      error => {console.log("Error  :"+error)
+      this.router.navigate (['/signup']); }
+      )
+      
+    }
 }

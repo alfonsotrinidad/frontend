@@ -20,8 +20,12 @@ export class AuthService {
    }
 
    signin(user){
-    console.log(user);
-    return  this.http.get<any>(this.URL + "/signin", user );
+
+    return    this.http.post<any>(this.URL + "/signin", user );
+   }
+
+   loggedin() {
+     return  localStorage.getItem("token")
    }
 
 
