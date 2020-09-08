@@ -25,7 +25,9 @@ export class SignupComponent implements OnInit {
      this.authService.signUp(this.user)
      .subscribe(
        res =>{
-           // this.router.navigate (['/products']);
+       // localStorage.setItem("token", res.token)
+       // localStorage.setItem("user", res.token)
+        this.router.navigate (['/signin']);
       },
        err => console.log(err)
      )
