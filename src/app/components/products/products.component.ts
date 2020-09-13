@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService} from '../../services/products.service'
-import { from } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-products',
@@ -20,12 +21,16 @@ export class ProductsComponent implements OnInit {
     vendidas:0
 
   };
+  public user: String ="";
   constructor(
-    private productService: ProductsService
+    private productService: ProductsService,
+    private autth: AuthService,
+    private r : Router
   ) { }
 
   ngOnInit(): void {
  // console.log(this.productService.getProducts());
+ this.user = this.autth.actulusuario();
  console.log(this.productService.getPaises().subscribe(
   contacts =>{ 
     this.contacts = contacts ;
@@ -48,7 +53,12 @@ guardar(producto){
   err => console.log("Errpoorr" , err)
   
   )
+}
 
+salir(){
+  localStorage.removeItem('token')
+  localStorage.removeItem('user')
+  this.r.navigate(['/signin'])
 
 }
 }

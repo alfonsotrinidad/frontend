@@ -8,14 +8,17 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { SigninComponent } from './components/signin/signin.component';
 
+//guard
+
+import { AuthGuard} from './guards/auth.guard'
 
 
 
 const routes: Routes = [
-  {    path: '' , component: SigninComponent, pathMatch: "full" },
-  {    path: 'products' , component: ProductsComponent },
+  {    path: '' , component: HomeComponent, pathMatch: "full" },
+  {    path: 'products' , component: ProductsComponent, canActivate: [AuthGuard] },
   {    path: 'signup' , component: SignupComponent },
-  {    path: 'product-list' , component: ProductListComponent  },
+  {    path: 'product-list' , component: ProductListComponent, canActivate: [AuthGuard]  },
   {    path: 'signin' , component: SigninComponent },
   
   ];

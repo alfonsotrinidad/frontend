@@ -46,8 +46,9 @@ template={
 }
 borrar(event){
   const id = event.target.id
+  const name = event.target.name
  
-  if(confirm("Clicka en Aceptar o Cancelar:  " + id))
+  if(confirm("Desea eliminar " + name))
      this.ps.eliminar(id);
   
      location.reload()

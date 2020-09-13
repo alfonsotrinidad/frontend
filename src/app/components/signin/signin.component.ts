@@ -27,7 +27,7 @@ export class SigninComponent implements OnInit {
     .subscribe( res =>{ 
          this.contact = res;
            localStorage.setItem("token", res.token)
-           localStorage.setItem("user", res.token)
+           localStorage.setItem("user", res.user)
            this.router.navigate (['/products']);
          },
       error => {console.log("Error  :"+error)

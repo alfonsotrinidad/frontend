@@ -24,6 +24,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatDialogModule} from '@angular/material/dialog';
 import { SigninComponent } from './components/signin/signin.component';
 import {MatCardModule} from '@angular/material/card';
+import { NavigationModule } from './shared/navigation.module';
+
+//guard
+
+import { AuthGuard} from './guards/auth.guard'
 
 
 @NgModule({
@@ -49,10 +54,12 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    NavigationModule
   ],
   providers: [
     AuthService,
+    AuthGuard,
     ProductsService
   ],
   bootstrap: [AppComponent]
